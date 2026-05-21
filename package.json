@@ -1,0 +1,65 @@
+{
+  "name": "setuphub",
+  "version": "1.0.4",
+  "description": "An Electron app for browsing essential software by category.",
+  "homepage": "https://github.com/belinda-hagen/SetupHub#readme",
+  "bugs": {
+    "url": "https://github.com/belinda-hagen/SetupHub/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belinda-hagen/SetupHub.git"
+  },
+  "license": "MIT",
+  "author": "Belinda Hagen",
+  "type": "commonjs",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:dir": "electron-builder --dir",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.belindahagen.setuphub",
+    "productName": "SetupHub",
+    "directories": {
+      "buildResources": "src/assets",
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "icons/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "src/assets/icon.png",
+      "signAndEditExecutable": false,
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SetupHub",
+      "runAfterFinish": true
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "belinda-hagen",
+      "repo": "SetupHub"
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^41.5.0",
+    "electron-builder": "^26.0.12"
+  }
+}
