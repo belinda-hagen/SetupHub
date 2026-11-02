@@ -24,6 +24,10 @@
 
 A desktop app for browsing a curated catalog of popular software, copying install commands, and building a personal setup list for any new machine.
 
+<br />
+
+<img src="docs/screenshot.png" alt="SetupHub main window showing the software catalog" width="900" />
+
 </div>
 
 ---
